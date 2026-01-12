@@ -1,0 +1,104 @@
+# ===============================
+# General
+# ===============================
+*.log
+*.tmp
+*.temp
+*.user
+*.suo
+*.userprefs
+*.pidb
+*.booproj
+*.svclog
+*.sln.docstates
+
+# ===============================
+# Visual Studio
+# ===============================
+.vs/
+.vscode/
+.idea/
+*.rsuser
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.snk
+
+# ===============================
+# Build results
+# ===============================
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+arm/
+arm64/
+
+# ===============================
+# .NET / MAUI
+# ===============================
+*.nupkg
+*.nuget.props
+*.nuget.targets
+.nuget/
+project.lock.json
+
+# ===============================
+# MAUI platform specific
+# ===============================
+
+# Android
+**/Platforms/Android/bin/
+**/Platforms/Android/obj/
+*.apk
+*.aab
+*.keystore
+local.properties
+
+# iOS / MacCatalyst
+**/Platforms/iOS/bin/
+**/Platforms/iOS/obj/
+**/Platforms/MacCatalyst/bin/
+**/Platforms/MacCatalyst/obj/
+*.app
+*.ipa
+*.dSYM
+
+# Windows
+**/Platforms/Windows/bin/
+**/Platforms/Windows/obj/
+*.msix
+*.msixbundle
+*.appx
+*.appxbundle
+
+# ===============================
+# Rider
+# ===============================
+.idea/
+*.sln.iml
+
+# ===============================
+# User-specific files
+# ===============================
+*.user
+*.suo
+*.cache
+*.lock.json
+
+# ===============================
+# OS generated files
+# ===============================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===============================
+# Environment files
+# ===============================
+.env
+.env.*
