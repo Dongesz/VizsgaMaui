@@ -23,7 +23,9 @@ namespace VizsgaMaui
             public int id { get; set; }
             public string name { get; set; }
             public string email { get; set; }
+            public string bio { get; set; }
             public string userType { get; set; }
+            public string profilePictureUrl { get; set; }
             public string createdAt { get; set; }
             public string updatedAt { get; set; }
         }
