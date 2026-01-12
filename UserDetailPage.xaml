@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="VizsgaMaui.UserDetailPage"
+    Title="Player">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="16"
+            Spacing="12">
+
+            <!-- NAME -->
+            <Label
+                x:Name="NameLabel"
+                FontSize="26"
+                FontAttributes="Bold"/>
+
+            <!-- EMAIL -->
+            <Label
+                x:Name="EmailLabel"
+                FontSize="16"
+                TextColor="Gray"/>
+
+            <!-- IMAGE -->
+            <Image
+                x:Name="ProfileImage"
+                HeightRequest="300"
+                WidthRequest="300"
+                Aspect="AspectFill"
+                Margin="0,10,60,10"/>
+
+            <!-- BIO -->
+            <Label
+                x:Name="BioLabel"
+                FontSize="16"/>
+
+            <!-- USER TYPE -->
+            <Border Stroke="Blue"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10"
+                Padding="16,5,5,5"
+                    Margin="0,0,270,0">
+                
+                <Label x:Name="UserTypeLabel"
+                   FontSize="20"
+                   TextColor="Blue"/>
+            </Border>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

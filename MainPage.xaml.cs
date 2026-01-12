@@ -1,59 +1,63 @@
 ﻿using System.Text.Json;
 
-namespace VizsgaMaui
+namespace VizsgaMaui;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public List<User> Users { get; set; } = new();
+
+    public MainPage()
     {
-        public List<User> Users { get; set; } = new();
+        InitializeComponent();
+        LoadUsers();
+    }
 
-        public MainPage()
+    private async void LoadUsers()
+    {
+        var client = new HttpClient
         {
-            InitializeComponent();
-            LoadUsers();
-        }
-        public class ApiResponse
-        {
-            public string message { get; set; }
-            public bool success { get; set; }
-            public List<User> result { get; set; } = new();
-        }
+            BaseAddress = new Uri("https://dongesz.com/")
+        };
 
-        public class User
-        {
-            public int id { get; set; }
-            public string name { get; set; }
-            public string email { get; set; }
-            public string bio { get; set; }
-            public string userType { get; set; }
-            public string profilePictureUrl { get; set; }
-            public string createdAt { get; set; }
-            public string updatedAt { get; set; }
-        }
-        private async void LoadUsers()
-        {
-            var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("https://dongesz.com/");
+        var json = await client.GetStringAsync("api/Users");
 
-            try
-            {
-                var response = await httpClient.GetStringAsync("api/Users");
+        var response = JsonSerializer.Deserialize<ApiResponse>(json,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                };
+        Users = response!.result;
+        dataGrid.ItemsSource = Users;
+    }
 
-                var apiResponse = JsonSerializer.Deserialize<ApiResponse>(response, options);
+    private async void OnUserTapped(object sender, TappedEventArgs e)
+    {
+        if (e.Parameter is int id)
+            await Navigation.PushAsync(new UserDetailPage(id));
+    }
 
-                Users = apiResponse.result;
-                dataGrid.ItemsSource = Users;
-
-                await DisplayAlert("Sikeres", $"{Users.Count} user betöltve", "OK");
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Hiba", ex.Message, "OK");
-            }
-        }
+    private void OnLikeClicked(object sender, EventArgs e)
+    {
+        var btn = (Button)sender;
+        var user = (User)btn.BindingContext;
+        user.IsLiked = !user.IsLiked;
     }
 }
+
+public class ApiResponse
+{
+    public string message { get; set; }
+    public bool success { get; set; }
+    public List<User> result { get; set; }
+}
+
+public class User
+{
+    public int id { get; set; }
+    public string name { get; set; }
+    public string email { get; set; }
+    public string bio { get; set; }
+    public string userType { get; set; }
+    public string profilePictureUrl { get; set; }
+
+    public bool IsLiked { get; set; }
+}
+
