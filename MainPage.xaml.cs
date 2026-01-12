@@ -33,13 +33,6 @@ public partial class MainPage : ContentPage
         if (e.Parameter is int id)
             await Navigation.PushAsync(new UserDetailPage(id));
     }
-
-    private void OnLikeClicked(object sender, EventArgs e)
-    {
-        var btn = (Button)sender;
-        var user = (User)btn.BindingContext;
-        user.IsLiked = !user.IsLiked;
-    }
 }
 
 public class ApiResponse
@@ -57,7 +50,10 @@ public class User
     public string bio { get; set; }
     public string userType { get; set; }
     public string profilePictureUrl { get; set; }
+    public int totalScore { get; set; }
+    public int totalXp { get; set; }
 
+    public DateTime createdAt { get; set; }
     public bool IsLiked { get; set; }
 }
 

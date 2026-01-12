@@ -22,12 +22,13 @@
                         HeightRequest="745"
                         Margin="10">
 
-                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto"
                           ColumnDefinitions="*,Auto"
                           RowSpacing="8">
 
                         <!-- IMAGE -->
                         <Image Grid.Row="0"
+                               BackgroundColor="White"
                                Grid.ColumnSpan="2"
                                HeightRequest="420"
                                Aspect="AspectFill"
@@ -47,31 +48,23 @@
                                TextColor="Gray"
                                Margin="10,0,0,0"/>
 
-                        <!-- BIO -->
-                        <Label Grid.Row="3"
-                               Grid.ColumnSpan="2"
-                               Text="{Binding bio}"
-                               FontSize="15"
-                               TextColor="Gray"
-                               Margin="10,10,10,0"
-                               MaxLines="3"
-                               LineBreakMode="TailTruncation"/>
+                      
 
-                        <!-- LIKE + TYPE -->
-                        <HorizontalStackLayout Grid.Row="4"
+                        <!-- TYPE -->
+                        <HorizontalStackLayout Grid.Row="3"
                                                Grid.ColumnSpan="2"
                                                HorizontalOptions="End"
-                                               Margin="0,118,30,0"
+                                               Margin="0,160,30,0"
                                                Spacing="10">
-                                    
- 
-                            <Border Stroke="Blue"
+
+                            <Border Stroke="White"
+                                    BackgroundColor="White"
                                     StrokeThickness="1"
                                     StrokeShape="RoundRectangle 10"
                                     Padding="8,4">
                                 <Label Text="{Binding userType}"
-                                       FontSize="20"
-                                       TextColor="Blue"/>
+                                       FontSize="17"
+                                       TextColor="Black"/>
                             </Border>
 
                         </HorizontalStackLayout>

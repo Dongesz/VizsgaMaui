@@ -20,7 +20,7 @@ public partial class UserDetailPage : ContentPage
             BaseAddress = new Uri("https://dongesz.com/")
         };
 
-        var json = await client.GetStringAsync($"api/Users/{_id}");
+        var json = await client.GetStringAsync($"api/Users/playerResult/{_id}");
 
         var response = JsonSerializer.Deserialize<ApiResponseSingle>(json,
             new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
@@ -32,6 +32,12 @@ public partial class UserDetailPage : ContentPage
         EmailLabel.Text = u.email;
         BioLabel.Text = u.bio;
         UserTypeLabel.Text = u.userType;
+
+        TotalScoreLabel.Text = u.totalScore.ToString();
+        TotalXpLabel.Text = u.totalXp.ToString();
+        CreatedAtLabel.Text = u.createdAt.ToString();
+            
+
     }
 }
 
