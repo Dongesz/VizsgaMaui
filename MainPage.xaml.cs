@@ -52,8 +52,6 @@ public class User
     public string profilePictureUrl { get; set; }
     public int totalScore { get; set; }
     public int totalXp { get; set; }
-
     public DateTime createdAt { get; set; }
-    public bool IsLiked { get; set; }
 }
 

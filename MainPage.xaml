@@ -26,7 +26,6 @@
                           ColumnDefinitions="*,Auto"
                           RowSpacing="8">
 
-                        <!-- IMAGE -->
                         <Image Grid.Row="0"
                                BackgroundColor="White"
                                Grid.ColumnSpan="2"
@@ -34,14 +33,12 @@
                                Aspect="AspectFill"
                                Source="{Binding profilePictureUrl}" />
 
-                        <!-- NAME -->
                         <Label Grid.Row="1"
                                Text="{Binding name}"
                                FontSize="30"
                                FontAttributes="Bold"
                                Margin="10,10,0,0"/>
 
-                        <!-- EMAIL -->
                         <Label Grid.Row="2"
                                Text="{Binding email}"
                                FontSize="18"
@@ -50,7 +47,6 @@
 
                       
 
-                        <!-- TYPE -->
                         <HorizontalStackLayout Grid.Row="3"
                                                Grid.ColumnSpan="2"
                                                HorizontalOptions="End"
@@ -71,7 +67,6 @@
 
                     </Grid>
 
-                    <!-- TAP TO DETAIL -->
                     <Border.GestureRecognizers>
                         <TapGestureRecognizer
                             Tapped="OnUserTapped"

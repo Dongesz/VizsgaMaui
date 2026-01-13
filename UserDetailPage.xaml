@@ -13,7 +13,6 @@
             RowSpacing="10"
             ColumnSpacing="16">
 
-            <!-- NAME -->
             <Label
                 Grid.Row="0"
                 Grid.Column="0"
@@ -21,7 +20,6 @@
                 FontSize="26"
                 FontAttributes="Bold" />
 
-            <!-- EMAIL -->
             <Label
                 Grid.Row="1"
                 Grid.Column="0"
@@ -29,7 +27,6 @@
                 FontSize="16"
                 TextColor="Gray" />
 
-            <!-- PROFILE IMAGE -->
             <Border
                 Grid.Row="0"
                 Grid.Column="1"
@@ -47,7 +44,6 @@
                     Aspect="AspectFill" />
             </Border>
 
-            <!-- USER TYPE -->
             <Border
                 Grid.Row="2"
                 Grid.Column="1"
@@ -65,7 +61,6 @@
                     TextColor="Black" />
             </Border>
 
-            <!-- BIO -->
             <Label
                 Grid.Row="3"
                 Grid.Column="0"
@@ -74,7 +69,6 @@
                 FontSize="16"
                 Margin="0,10,0,10" />
 
-            <!-- STATS -->
             <Grid
                 Grid.Row="4"
                 Grid.Column="0"
@@ -82,7 +76,6 @@
                 ColumnDefinitions="*,*,*"
                 Margin="0,10,0,0">
 
-                <!-- TOTAL SCORE -->
                 <VerticalStackLayout HorizontalOptions="Center">
                     <Label
                         Text="SCORE"
@@ -96,7 +89,6 @@
                         HorizontalTextAlignment="Center" />
                 </VerticalStackLayout>
 
-                <!-- TOTAL XP -->
                 <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
                     <Label
                         Text="XP"
@@ -110,7 +102,6 @@
                         HorizontalTextAlignment="Center" />
                 </VerticalStackLayout>
 
-                <!-- CREATED AT -->
                 <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
                     <Label
                         Text="CREATED"
